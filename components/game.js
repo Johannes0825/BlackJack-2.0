@@ -94,11 +94,20 @@ export function stand() {
 
 export function doubleDown() {
   if (state.phase === "PLAYER" && state.doubleAvailable) {
+    if (state.bet > state.balance) {
+      alert("You dont have enough to double down");
+      return;
+    }
+
+    state.balance -= state.bet;
+    state.bet += state.bet;
+
     const newCard = drawCard(shoe);
     state.playerHand.push(newCard);
     state.playerSum += newCard.value;
     console.log(newCard);
     state.playerSum = adjustAceValue(state.playerHand, state.playerSum);
+
     checkResult();
     handleBet();
     renderUI();

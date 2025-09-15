@@ -26,6 +26,11 @@ export function startGame() {
     return;
   }
 
+  if (betValue > state.balance) {
+    alert("You dont have enough money, get a job!");
+    return;
+  }
+
   state.bet = betValue;
   console.log("Bet set to:", state.bet);
 
