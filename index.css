@@ -1,7 +1,7 @@
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", Arial,
     sans-serif;
-  background-image: url("./images/table.png");
+  background-image: url("./images/background.png");
   background-size: cover;
   font-weight: bold;
   color: white;
@@ -18,16 +18,39 @@ h1 {
 }
 
 button {
-  color: #016f32;
+  color: #ffffff;
   width: 150px;
-  background: goldenrod;
+  background-color: rgba(240, 186, 49, 0.3);
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: bold;
-  border: none;
-  border-radius: 2px;
+  border: 3px solid goldenrod;
+  border-radius: 20px;
   margin-bottom: 2px;
   margin-top: 2px;
+  cursor: pointer;
+}
+
+input {
+  color: #ffffff;
+  width: 150px;
+  background: rgb(240, 186, 49, 0.3);
+  font-weight: bold;
+  border: 3px solid goldenrod;
+  border-radius: 20px;
+  margin-bottom: 2px;
+  padding: 5px;
+  margin-top: 2px;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #dfdfdf;
+  font-weight: 300;
+}
+
+h5 {
+  margin: 10;
 }
 
 .card-container {
@@ -35,11 +58,16 @@ button {
   display: flex;
   justify-content: center;
   border-radius: 5px;
+  margin: 0;
 }
 
 .card {
   height: 100px;
   margin: 10px;
+}
+
+#player-cards {
+  margin-top: 120px;
 }
 
 .blink-won {
@@ -48,8 +76,8 @@ button {
 
 @keyframes blink-won-animation {
   50% {
-    background-color: rgb(0, 255, 13);
-    color: white;
+    color: rgb(26, 255, 0);
+    font-size: 19px;
   }
 }
 
@@ -59,8 +87,8 @@ button {
 
 @keyframes blink-loss-animation {
   50% {
-    background-color: rgb(255, 1, 1);
-    color: white;
+    color: rgb(255, 0, 0);
+    font-size: 19px;
   }
 }
 
@@ -70,7 +98,7 @@ button {
 
 @keyframes blink-push-animation {
   50% {
-    background-color: rgb(162, 162, 162);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 221, 0);
+    font-size: 19px;
   }
 }
